@@ -22,7 +22,7 @@ class NeuralNetwork:
 
 # Crear la interfaz de usuario con Streamlit
 # Crear la interfaz de usuario con Streamlit
-st.title('Aplicación de Red Neuronal')
+st.title('Aplicación de Red Neuronal MP Statistical')
 
 # Permitir al usuario especificar el número de capas y neuronas
 num_layers = st.slider('Número de capas', min_value=1, max_value=10)
