@@ -10,11 +10,13 @@ class NeuralNetwork:
     def __init__(self):
         self.model = Sequential()
 
+    # Dentro de la clase NeuralNetwork
     def add_layer(self, neurons, input_dim=None):
-        if input_dim:  # Si es la primera capa, necesitamos especificar la dimensión de entrada
+        if input_dim:  
             self.model.add(Dense(neurons, input_dim=input_dim, activation='relu'))
         else:
             self.model.add(Dense(neurons, activation='relu'))
+
 
     def compile_model(self):
         self.model.add(Dense(1, activation='sigmoid'))  # Capa de salida para clasificación binaria
@@ -33,7 +35,7 @@ num_epochs = st.number_input('Número de épocas', min_value=0, max_value=1000, 
 
 # Crear la red neuronal
 nn = NeuralNetwork()
-nn.add_layer(neurons=neurons_per_layer, input_dim=2)  # Añade la primera capa (2 características de entrada para make_moons)
+nn.add_layer(neurons=neurons_per_layer, input_dim=2) 
 for _ in range(num_layers - 1):  # Añade las capas restantes
     nn.add_layer(neurons=neurons_per_layer)
 
