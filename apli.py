@@ -41,7 +41,7 @@ for _ in range(num_layers - 1):  # Añade las capas restantes
 
 if st.button('Compilar'):
     nn.compile_model()  # Compila el modelo
-    st.write('Modelo compilado con éxito')
+    
 
     # Generar el conjunto de datos make_moons
     X, y = make_moons(n_samples=1000, noise=0.1)
@@ -75,7 +75,7 @@ if st.button('Compilar'):
     axs[1].contourf(xx, yy, Z, alpha=0.8)
     scatter = axs[1].scatter(X[:, 0], X[:, 1], c=y, edgecolors='k')
     axs[1].set_title('Regiones de clasificación')
-
+    st.write('Modelo compilado con éxito')
     # Mostrar las gráficas
     st.pyplot(fig)
 
