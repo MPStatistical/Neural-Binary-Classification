@@ -21,11 +21,15 @@ class NeuralNetwork:
         self.model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Crear la interfaz de usuario con Streamlit
+# Crear la interfaz de usuario con Streamlit
 st.title('Aplicación de Red Neuronal')
 
 # Permitir al usuario especificar el número de capas y neuronas
 num_layers = st.slider('Número de capas', min_value=1, max_value=10)
 neurons_per_layer = st.slider('Neuronas por capa', min_value=1, max_value=100)
+
+# Permitir al usuario especificar el número de épocas
+num_epochs = st.number_input('Número de épocas', min_value=0, max_value=1000, value=10)
 
 # Crear la red neuronal
 nn = NeuralNetwork()
@@ -41,8 +45,8 @@ if st.button('Compilar'):
     X, y = make_moons(n_samples=1000, noise=0.1)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Entrenar el modelo
-    history = nn.model.fit(X_train, y_train, epochs=10, validation_data=(X_test, y_test))
+    # Entrenar el modelo con el número de épocas especificado por el usuario
+    history = nn.model.fit(X_train, y_train, epochs=num_epochs, validation_data=(X_test, y_test))
 
     # Crear una cuadrícula de puntos para visualizar las regiones de clasificación
     x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
