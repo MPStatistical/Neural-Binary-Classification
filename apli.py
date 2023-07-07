@@ -22,9 +22,9 @@ class NeuralNetwork:
         self.model.add(Dense(1, activation='sigmoid'))  # Capa de salida para clasificación binaria
         self.model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+
 # Crear la interfaz de usuario con Streamlit
-# Crear la interfaz de usuario con Streamlit
-st.title('Aplicación de Red Neuronal MP Statistical')
+st.title('Aplicación de Red Neuronal MP')
 
 # Permitir al usuario especificar el número de capas y neuronas
 num_layers = st.slider('Número de capas', min_value=1, max_value=10)
