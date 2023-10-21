@@ -15,7 +15,7 @@ class NeuralNetwork:
         if input_dim:
             self.model.add(Dense(neurons, input_dim=input_dim, activation='relu'))
         else:
-            self.model add(Dense(neurons, activation='relu'))
+            self.model.add(Dense(neurons, activation='relu'))
 
     def compile_model(self):
         self.model.add(Dense(1, activation='sigmoid'))  # Output layer for binary classification
