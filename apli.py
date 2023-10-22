@@ -37,7 +37,7 @@ nn.add_layer(neurons=neurons_per_layer, input_dim=2)
 for _ in range(num_layers - 1):  # Add the remaining layers
     nn.add_layer(neurons=neurons_per_layer)
 
-if st.button('Compile'):
+if st.button('Compile and fit'):
     nn.compile_model()  # Compile the model
 
     # Generate the make_moons dataset
